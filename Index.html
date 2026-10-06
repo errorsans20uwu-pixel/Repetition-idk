@@ -7,6 +7,11 @@
 <title>IT Tutor — Репетиторство по IT</title>
 
 <style>
+
+/* =========================
+   ОСНОВНЫЕ НАСТРОЙКИ
+========================= */
+
 * {
     box-sizing: border-box;
     margin: 0;
@@ -24,14 +29,19 @@ body {
     line-height: 1.6;
 }
 
-/* HEADER */
+
+/* =========================
+   ШАПКА
+========================= */
 
 header {
     position: sticky;
     top: 0;
-    z-index: 100;
+    z-index: 1000;
+
     background: rgba(255,255,255,0.92);
     backdrop-filter: blur(12px);
+
     box-shadow: 0 4px 20px rgba(60,50,120,0.1);
 
     padding: 15px 7%;
@@ -49,24 +59,34 @@ header {
 
 nav a {
     margin-left: 18px;
+
     text-decoration: none;
+
     color: #333;
+
     font-weight: 600;
+
+    transition: 0.2s;
 }
 
 nav a:hover {
     color: #6657e8;
 }
 
-/* HERO */
+
+/* =========================
+   ГЛАВНЫЙ ЭКРАН
+========================= */
 
 .hero {
-    min-height: 520px;
+    min-height: 560px;
 
     padding: 80px 7%;
 
     display: flex;
+
     align-items: center;
+
     justify-content: space-between;
 
     gap: 40px;
@@ -80,17 +100,21 @@ nav a:hover {
     display: inline-block;
 
     background: #e6e0ff;
+
     color: #5948d8;
 
     padding: 8px 15px;
+
     border-radius: 30px;
 
     font-weight: bold;
+
     margin-bottom: 18px;
 }
 
 h1 {
     font-size: clamp(40px, 6vw, 72px);
+
     line-height: 1.05;
 
     margin-bottom: 20px;
@@ -102,6 +126,7 @@ h1 {
 
 .hero p {
     font-size: 19px;
+
     color: #62677b;
 
     margin-bottom: 28px;
@@ -109,7 +134,9 @@ h1 {
 
 .buttons {
     display: flex;
+
     gap: 12px;
+
     flex-wrap: wrap;
 }
 
@@ -117,51 +144,80 @@ h1 {
     display: inline-block;
 
     border: 0;
+
     border-radius: 14px;
 
     padding: 13px 21px;
 
     background: #6657e8;
+
     color: white;
 
     text-decoration: none;
+
     font-weight: bold;
 
     cursor: pointer;
 
-    box-shadow: 0 8px 20px rgba(102,87,232,0.25);
+    box-shadow:
+        0 8px 20px rgba(102,87,232,0.25);
+
+    transition: 0.2s;
 }
 
 .btn:hover {
     transform: translateY(-2px);
+
+    box-shadow:
+        0 12px 25px rgba(102,87,232,0.35);
 }
 
 .btn.secondary {
     background: white;
+
     color: #6657e8;
 
     border: 2px solid #ddd7ff;
 }
 
-/* CODE CARD */
+
+/* =========================
+   КАРТОЧКА С КОДОМ
+========================= */
 
 .code-card {
     width: min(430px,100%);
 
     background: #171827;
+
     color: white;
 
     border-radius: 22px;
 
     padding: 25px;
 
-    box-shadow: 0 25px 60px rgba(30,25,60,0.25);
+    box-shadow:
+        0 25px 60px rgba(30,25,60,0.25);
 
     font-family: monospace;
+
+    animation: floating 4s ease-in-out infinite;
+}
+
+@keyframes floating {
+
+    0%,100% {
+        transform: translateY(0);
+    }
+
+    50% {
+        transform: translateY(-10px);
+    }
 }
 
 .dots {
     display: flex;
+
     gap: 7px;
 
     margin-bottom: 20px;
@@ -169,6 +225,7 @@ h1 {
 
 .dots i {
     width: 12px;
+
     height: 12px;
 
     border-radius: 50%;
@@ -186,10 +243,14 @@ h1 {
 
 .code-card em {
     color: #9cffaa;
+
     font-style: normal;
 }
 
-/* SECTIONS */
+
+/* =========================
+   СЕКЦИИ
+========================= */
 
 section {
     padding: 70px 7%;
@@ -203,7 +264,10 @@ section {
     margin-bottom: 35px;
 }
 
-/* CARDS */
+
+/* =========================
+   КАРТОЧКИ
+========================= */
 
 .cards {
     display: grid;
@@ -230,10 +294,10 @@ section {
 }
 
 .card:hover {
-    transform: translateY(-5px);
+    transform: translateY(-6px);
 
     box-shadow:
-        0 15px 35px rgba(60,50,120,0.15);
+        0 18px 40px rgba(60,50,120,0.15);
 }
 
 .icon {
@@ -250,7 +314,10 @@ section {
     color: #70758a;
 }
 
-/* REVIEWS */
+
+/* =========================
+   ОТЗЫВЫ
+========================= */
 
 .stars {
     color: #ffb52e;
@@ -268,54 +335,10 @@ section {
     color: #6657e8;
 }
 
-/* FORMS */
 
-.forms {
-    display: grid;
-
-    grid-template-columns: 1fr 1fr;
-
-    gap: 25px;
-
-    max-width: 1000px;
-
-    margin: auto;
-}
-
-form {
-    background: white;
-
-    padding: 28px;
-
-    border-radius: 22px;
-
-    box-shadow:
-        0 10px 30px rgba(60,50,120,0.09);
-}
-
-input,
-textarea {
-    width: 100%;
-
-    padding: 13px;
-
-    margin: 8px 0 14px;
-
-    border: 1px solid #ddd;
-
-    border-radius: 12px;
-
-    font: inherit;
-
-    outline: none;
-}
-
-input:focus,
-textarea:focus {
-    border-color: #6657e8;
-}
-
-/* CHAT */
+/* =========================
+   ЧАТ
+========================= */
 
 .chat-wrap {
     max-width: 760px;
@@ -350,6 +373,8 @@ textarea:focus {
     border-radius: 16px;
 
     max-width: 80%;
+
+    word-wrap: break-word;
 }
 
 .bot {
@@ -378,7 +403,75 @@ textarea:focus {
     margin: 0;
 }
 
-/* PROFILE */
+
+/* =========================
+   ФОРМЫ
+========================= */
+
+.forms {
+    display: grid;
+
+    grid-template-columns: 1fr 1fr;
+
+    gap: 25px;
+
+    max-width: 1000px;
+
+    margin: auto;
+}
+
+form {
+    background: white;
+
+    padding: 28px;
+
+    border-radius: 22px;
+
+    box-shadow:
+        0 10px 30px rgba(60,50,120,0.09);
+}
+
+label {
+    display: block;
+
+    margin-top: 12px;
+
+    font-weight: bold;
+
+    font-size: 14px;
+}
+
+input,
+textarea {
+    width: 100%;
+
+    padding: 13px;
+
+    margin: 8px 0 14px;
+
+    border: 1px solid #ddd;
+
+    border-radius: 12px;
+
+    font: inherit;
+
+    outline: none;
+
+    transition: 0.2s;
+}
+
+input:focus,
+textarea:focus {
+    border-color: #6657e8;
+
+    box-shadow:
+        0 0 0 3px rgba(102,87,232,0.1);
+}
+
+
+/* =========================
+   СООБЩЕНИЕ РЕГИСТРАЦИИ
+========================= */
 
 #profile {
     display: none;
@@ -387,14 +480,38 @@ textarea:focus {
 
     color: #167047;
 
-    padding: 12px;
+    padding: 13px;
 
     border-radius: 12px;
 
-    margin-bottom: 15px;
+    margin-top: 15px;
+
+    font-weight: bold;
 }
 
-/* FOOTER */
+
+/* =========================
+   КОНТАКТЫ
+========================= */
+
+.contact-item {
+    margin: 13px 0;
+
+    font-size: 17px;
+}
+
+.notice {
+    font-size: 12px;
+
+    color: #8b8fa2;
+
+    margin-top: 10px;
+}
+
+
+/* =========================
+   FOOTER
+========================= */
 
 footer {
     background: #171827;
@@ -406,15 +523,10 @@ footer {
     text-align: center;
 }
 
-.notice {
-    font-size: 12px;
 
-    color: #8b8fa2;
-
-    margin-top: 8px;
-}
-
-/* MOBILE */
+/* =========================
+   АДАПТИВНОСТЬ
+========================= */
 
 @media(max-width:760px) {
 
@@ -435,13 +547,30 @@ footer {
     h1 {
         font-size: 46px;
     }
+
+    .code-card {
+        width: 100%;
+    }
+
+    .chat-input {
+        flex-direction: column;
+    }
+
+    .chat-input .btn {
+        width: 100%;
+    }
 }
+
 </style>
 </head>
 
+
 <body>
 
-<!-- ШАПКА -->
+
+<!-- =========================
+     HEADER
+========================= -->
 
 <header>
 
@@ -450,10 +579,23 @@ footer {
     </div>
 
     <nav>
-        <a href="#about">Обо мне</a>
-        <a href="#reviews">Отзывы</a>
-        <a href="#chat-section">Чат</a>
-        <a href="#register">Регистрация</a>
+
+        <a href="#about">
+            Обучение
+        </a>
+
+        <a href="#reviews">
+            Отзывы
+        </a>
+
+        <a href="#chat-section">
+            Чат
+        </a>
+
+        <a href="#register">
+            Регистрация
+        </a>
+
     </nav>
 
 </header>
@@ -461,7 +603,10 @@ footer {
 
 <main>
 
-<!-- ГЛАВНЫЙ ЭКРАН -->
+
+<!-- =========================
+     HERO
+========================= -->
 
 <section class="hero">
 
@@ -472,26 +617,39 @@ footer {
         </div>
 
         <h1>
+
             IT становится
+
             <span class="gradient">
                 понятным.
             </span>
+
         </h1>
 
         <p>
-            Помогаю начинающим изучать HTML, CSS
-            и основы веб-разработки в удобном темпе —
-            от первых тегов до собственного сайта.
+
+            Помогаю начинающим изучать HTML,
+            CSS и основы веб-разработки
+            в удобном темпе — от первых тегов
+            до собственного сайта.
+
         </p>
+
 
         <div class="buttons">
 
-            <a class="btn" href="#register">
-                Записаться
+            <a
+                class="btn"
+                href="#register"
+            >
+                🚀 Записаться
             </a>
 
-            <a class="btn secondary"
-               href="#chat-section">
+
+            <a
+                class="btn secondary"
+                href="#chat-section"
+            >
                 💬 Задать вопрос
             </a>
 
@@ -500,41 +658,68 @@ footer {
     </div>
 
 
-    <!-- КАРТОЧКА С КОДОМ -->
+    <!-- КАРТОЧКА КОДА -->
 
     <div class="code-card">
 
         <div class="dots">
+
             <i></i>
             <i></i>
             <i></i>
+
         </div>
 
+
         <div>
+
             <span>&lt;h1&gt;</span>
+
             Привет, IT!
+
             <span>&lt;/h1&gt;</span>
+
         </div>
+
 
         <br>
 
+
         <div>
+
             <b>const</b>
+
             student =
-            <em>"будущий разработчик"</em>;
+
+            <em>
+                "будущий разработчик"
+            </em>;
+
         </div>
 
+
         <div>
+
             <b>student</b>.learn(
-            <em>"HTML + CSS"</em>
+
+            <em>
+                "HTML + CSS"
+            </em>
+
             );
+
         </div>
+
 
         <br>
 
+
         <div>
+
             <span>&lt;/code&gt;</span>
+
             🚀
+
         </div>
 
     </div>
@@ -542,27 +727,37 @@ footer {
 </section>
 
 
-<!-- НАПРАВЛЕНИЯ -->
+
+<!-- =========================
+     ОБУЧЕНИЕ
+========================= -->
 
 <section id="about">
 
     <h2 class="section-title">
-        Что можно изучить?
+        📚 Что можно изучить?
     </h2>
+
 
     <div class="cards">
 
+
         <div class="card">
 
-            <div class="icon">🌐</div>
+            <div class="icon">
+                🌐
+            </div>
 
             <h3>
                 HTML
             </h3>
 
             <p class="muted">
-                Структура сайтов, теги, ссылки,
-                изображения, таблицы и формы.
+
+                Структура сайтов, теги,
+                ссылки, изображения,
+                таблицы и формы.
+
             </p>
 
         </div>
@@ -570,15 +765,20 @@ footer {
 
         <div class="card">
 
-            <div class="icon">🎨</div>
+            <div class="icon">
+                🎨
+            </div>
 
             <h3>
                 CSS
             </h3>
 
             <p class="muted">
-                Цвета, шрифты, блоки, адаптивность
-                и красивое оформление страниц.
+
+                Цвета, шрифты, блоки,
+                адаптивность, оформление
+                и анимации.
+
             </p>
 
         </div>
@@ -586,15 +786,20 @@ footer {
 
         <div class="card">
 
-            <div class="icon">⚙️</div>
+            <div class="icon">
+                ⚙️
+            </div>
 
             <h3>
                 Основы IT
             </h3>
 
             <p class="muted">
-                Логика, файлы, браузер и принципы
-                создания сайтов.
+
+                Логика, файлы, браузеры
+                и основные принципы
+                веб-разработки.
+
             </p>
 
         </div>
@@ -602,16 +807,20 @@ footer {
 
         <div class="card">
 
-            <div class="icon">🚀</div>
+            <div class="icon">
+                🚀
+            </div>
 
             <h3>
-                Проекты
+                Практические проекты
             </h3>
 
             <p class="muted">
-                Создание собственного мини-сайта,
-                чтобы знания сразу превращались
-                в результат.
+
+                Создание собственных сайтов,
+                чтобы знания сразу
+                превращались в результат.
+
             </p>
 
         </div>
@@ -621,7 +830,10 @@ footer {
 </section>
 
 
-<!-- ОТЗЫВЫ -->
+
+<!-- =========================
+     ОТЗЫВЫ
+========================= -->
 
 <section id="reviews">
 
@@ -629,7 +841,9 @@ footer {
         💬 Отзывы учеников
     </h2>
 
+
     <div class="cards">
+
 
         <div class="card">
 
@@ -638,9 +852,12 @@ footer {
             </div>
 
             <p>
-                «Наконец-то я понял, зачем нужны
-                HTML-теги. На занятии всё разбирали
-                спокойно и на примерах.»
+
+                «Наконец-то я понял,
+                зачем нужны HTML-теги.
+                Всё разбирали спокойно
+                и на понятных примерах.»
+
             </p>
 
             <div class="review-name">
@@ -657,9 +874,12 @@ footer {
             </div>
 
             <p>
-                «Больше всего понравилось, что мы
-                не просто читали теорию, а сразу
-                создавали свой сайт.»
+
+                «Больше всего понравилось,
+                что мы не просто читали
+                теорию, а сразу создавали
+                свой сайт.»
+
             </p>
 
             <div class="review-name">
@@ -676,9 +896,11 @@ footer {
             </div>
 
             <p>
-                «После нескольких занятий я уже
-                могу самостоятельно менять дизайн
-                страницы.»
+
+                «После нескольких занятий
+                я уже могу самостоятельно
+                менять дизайн страницы.»
+
             </p>
 
             <div class="review-name">
@@ -687,12 +909,16 @@ footer {
 
         </div>
 
+
     </div>
 
 </section>
 
 
-<!-- ЧАТ -->
+
+<!-- =========================
+     ЧАТ
+========================= -->
 
 <section id="chat-section">
 
@@ -700,14 +926,22 @@ footer {
         🤖 Поговорить с репетитором
     </h2>
 
+
     <div class="chat-wrap">
+
 
         <div id="chat">
 
             <div class="msg bot">
-                Привет! 👋 Я виртуальный помощник
-                IT-репетитора. Спроси меня про занятия,
+
+                Привет! 👋
+
+                Я виртуальный помощник
+                IT-репетитора.
+
+                Спроси меня про занятия,
                 HTML, CSS или обучение.
+
             </div>
 
         </div>
@@ -717,8 +951,10 @@ footer {
 
             <input
                 id="message"
+                type="text"
                 placeholder="Например: чему вы учите?"
             >
+
 
             <button
                 class="btn"
@@ -734,7 +970,10 @@ footer {
 </section>
 
 
-<!-- РЕГИСТРАЦИЯ -->
+
+<!-- =========================
+     РЕГИСТРАЦИЯ
+========================= -->
 
 <section id="register">
 
@@ -742,85 +981,124 @@ footer {
         📝 Регистрация
     </h2>
 
+
     <div class="forms">
 
 
         <!-- ФОРМА -->
 
-        <form onsubmit="registerUser(event)">
+        <form id="registerForm">
 
             <h3>
-                Создать аккаунт
+                ✨ Создать аккаунт
             </h3>
 
+
             <p class="muted">
-                Данные сохраняются только в браузере
-                этого демонстрационного сайта.
+
+                Заполните форму,
+                чтобы записаться
+                на занятия.
+
             </p>
+
+
+            <label for="name">
+                Ваше имя
+            </label>
 
             <input
                 id="name"
+                type="text"
+                placeholder="Например, Дарья"
                 required
-                placeholder="Ваше имя"
             >
+
+
+            <label for="email">
+                Электронная почта
+            </label>
 
             <input
                 id="email"
-                required
                 type="email"
-                placeholder="Ваша почта"
+                placeholder="example@mail.com"
+                required
             >
+
+
+            <label for="password">
+                Пароль
+            </label>
 
             <input
                 id="password"
-                required
                 type="password"
+                placeholder="Придумайте пароль"
                 minlength="4"
-                placeholder="Пароль"
+                required
             >
+
 
             <button
                 class="btn"
                 type="submit"
             >
-                Зарегистрироваться
+                🚀 Зарегистрироваться
             </button>
+
 
             <div id="profile"></div>
 
         </form>
 
 
+
         <!-- КОНТАКТЫ -->
 
         <div class="card">
 
+            <div class="icon">
+                📞
+            </div>
+
+
             <h3>
-                📞 Контакты
+                Контакты репетитора
             </h3>
 
+
             <p class="muted">
-                Связаться с репетитором можно
-                через демонстрационные контакты:
+
+                Если хотите узнать
+                подробнее о занятиях,
+                свяжитесь со мной.
+
             </p>
 
-            <br>
 
-            <p>
+            <div class="contact-item">
                 📱 <b>+998 90 123 45 67</b>
-            </p>
+            </div>
 
-            <p>
+
+            <div class="contact-item">
                 ✉️ <b>it.tutor.demo@example.com</b>
-            </p>
+            </div>
 
-            <p>
+
+            <div class="contact-item">
                 💻 Онлайн-занятия
-            </p>
+            </div>
+
 
             <p class="notice">
-                ⚠️ Номер и почта вымышленные
-                и используются только для проекта.
+
+                ⚠️ Номер телефона и почта
+                являются вымышленными
+                и используются только
+                для учебного проекта.
+
             </p>
 
         </div>
@@ -832,7 +1110,10 @@ footer {
 </main>
 
 
-<!-- FOOTER -->
+
+<!-- =========================
+     FOOTER
+========================= -->
 
 <footer>
 
@@ -840,10 +1121,12 @@ footer {
         💻 IT Tutor
     </h3>
 
+
     <p>
         Учимся создавать.
-        Создаём, чтобы учиться.
+        Создаём, чтобы учиться. 🚀
     </p>
+
 
     <p class="notice">
         Учебный демонстрационный проект • 2026
@@ -852,31 +1135,39 @@ footer {
 </footer>
 
 
+
 <script>
 
-/* =========================
-   ЧАТ С БОТОМ
-========================= */
+/* ==================================
+   ЧАТ
+================================== */
+
 
 function addMessage(text, type) {
 
     const chat =
         document.getElementById("chat");
 
-    const div =
+
+    const message =
         document.createElement("div");
 
-    div.className =
+
+    message.className =
         "msg " + type;
 
-    div.textContent =
+
+    message.textContent =
         text;
 
-    chat.appendChild(div);
+
+    chat.appendChild(message);
+
 
     chat.scrollTop =
         chat.scrollHeight;
 }
+
 
 
 function sendMessage() {
@@ -884,34 +1175,54 @@ function sendMessage() {
     const input =
         document.getElementById("message");
 
+
     const text =
         input.value.trim();
 
-    if (!text) return;
 
-    addMessage(text, "user");
+    if (!text) {
+        return;
+    }
+
+
+    addMessage(
+        text,
+        "user"
+    );
+
 
     input.value = "";
 
 
     setTimeout(function() {
 
-        const q =
+        const question =
             text.toLowerCase();
 
+
         let answer =
-            "Я пока умею отвечать на вопросы про занятия, HTML, CSS и обучение. Попробуй спросить: «Что вы изучаете?»";
+            "Я пока умею отвечать на вопросы про занятия, HTML, CSS и обучение. Попробуйте спросить: «Что вы изучаете?»";
 
 
-        if (q.includes("html")) {
+        /* HTML */
+
+        if (
+            question.includes("html") ||
+            question.includes("хтмл")
+        ) {
 
             answer =
-                "HTML — это язык разметки. На занятиях можно изучить теги, структуру страницы, ссылки, изображения, таблицы и формы.";
+                "HTML — это язык разметки сайтов. На занятиях мы можем изучить теги, структуру страницы, ссылки, изображения, таблицы и формы.";
 
         }
 
 
-        else if (q.includes("css")) {
+        /* CSS */
+
+        else if (
+            question.includes("css") ||
+            question.includes("ксс")
+        ) {
 
             answer =
                 "CSS отвечает за внешний вид сайта: цвета, размеры, шрифты, расположение элементов, анимации и адаптивность.";
@@ -919,42 +1230,69 @@ function sendMessage() {
         }
 
 
+        /* ЦЕНА */
+
         else if (
-            q.includes("цена") ||
-            q.includes("стоимость")
+            question.includes("цена") ||
+            question.includes("стоимость") ||
+            question.includes("сколько")
         ) {
 
             answer =
-                "Стоимость в этом учебном макете не указана. Сюда можно добавить собственный прайс и расписание.";
+                "Стоимость в этой демонстрационной версии не указана. В настоящий проект сюда можно добавить расписание и цены.";
 
         }
 
 
+        /* ОБУЧЕНИЕ */
+
         else if (
-            q.includes("занят") ||
-            q.includes("учите") ||
-            q.includes("обуч")
+            question.includes("учите") ||
+            question.includes("обуч") ||
+            question.includes("занят") ||
+            question.includes("изуч")
         ) {
 
             answer =
-                "Основные направления: HTML, CSS, основы веб-разработки и создание небольших проектов.";
+                "Основные направления: HTML, CSS, основы веб-разработки и создание собственных небольших проектов.";
 
         }
 
 
+        /* ПРИВЕТ */
+
         else if (
-            q.includes("привет")
+            question.includes("привет") ||
+            question.includes("здравств")
         ) {
 
             answer =
-                "Привет! 👋 Рад помочь разобраться с IT. Можешь спросить про HTML, CSS или формат занятий.";
+                "Привет! 👋 Рад помочь разобраться с IT. Можешь спросить меня про HTML, CSS или формат занятий.";
 
         }
 
 
-        addMessage(answer, "bot");
+        /* ПОКА */
+
+        else if (
+            question.includes("пока") ||
+            question.includes("до свид")
+        ) {
+
+            answer =
+                "До встречи! 👋 Удачи в изучении IT! 🚀";
+
+        }
+
+
+        addMessage(
+            answer,
+            "bot"
+        );
+
 
     }, 500);
+
 }
 
 
@@ -964,45 +1302,89 @@ document
     .getElementById("message")
     .addEventListener(
         "keydown",
-        function(e) {
+        function(event) {
 
-            if (e.key === "Enter") {
+            if (event.key === "Enter") {
+
                 sendMessage();
+
             }
 
         }
     );
 
 
-/* =========================
+
+/* ==================================
    РЕГИСТРАЦИЯ
-========================= */
+================================== */
 
-function registerUser(event) {
 
-    event.preventDefault();
+document
+    .getElementById("registerForm")
+    .addEventListener(
+        "submit",
+        function(event) {
 
-    const name =
-        document.getElementById("name").value;
+            event.preventDefault();
 
-    localStorage.setItem(
-        "itTutorUser",
-        name
-    );
 
-    const profile =
-        document.getElementById("profile");
+            const name =
+                document
+                    .getElementById("name")
+                    .value
+                    .trim();
 
-    profile.style.display =
-        "block";
 
-    profile.textContent =
-        "✅ Регистрация выполнена! Добро пожаловать, "
-        + name
-        + "!";
-}
+            const email =
+                document
+                    .getElementById("email")
+                    .value
+                    .trim();
 
-</script>
 
-</body>
-</html>
+            const password =
+                document
+                    .getElementById("password")
+                    .value;
+
+
+            const profile =
+                document
+                    .getElementById("profile");
+
+
+            /* Проверяем поля */
+
+            if (
+                !name ||
+                !email ||
+                !password
+            ) {
+
+                profile.style.display =
+                    "block";
+
+                profile.style.background =
+                    "#ffecec";
+
+                profile.style.color =
+                    "#b3261e";
+
+                profile.textContent =
+                    "❌ Пожалуйста, заполните все поля.";
+
+                return;
+            }
+
+
+            /* Проверяем пароль */
+
+            if (
+                password.length < 4
+            ) {
+
+                profile.style.display =
+                    "block";
+
+                profile.styl
